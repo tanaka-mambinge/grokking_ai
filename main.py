@@ -9,6 +9,11 @@ attraction_dists = [
     [4, 5, 7, 6, 3, 0],
 ]
 
-colony = AOC(attraction_dists, 1000)
-print(colony.ants)
-print(colony.pheromone_intensity)
+colony = ACO(
+    attractions=attraction_dists,
+    colony_size=100,
+    iterations=5,
+    alpha_beta=(4, 7),
+    evaporation_rate=0.4,
+)
+colony.solve()
